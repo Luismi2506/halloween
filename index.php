@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </header>
 
-    <h1>🎃 Bienvenido al Blog de Halloween 🎃</h1>
+    <h1>REGISTRATE MAMONAZO</h1>
 
     <!-- Nueva sección de login con imágenes a los lados -->
     <section class="login-section">
