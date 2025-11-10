@@ -27,11 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: home.php');
                 exit;
             } else {
-                $mensaje = "Usuario o contraseña incorrectos 👻";
+                $mensaje = "Usuario o contraseña incorrectos ";
             }
         } elseif ($accion === 'registro') {
             if (isset($usuarios[$usuario])) {
-                $mensaje = "El usuario ya está registrado 👀";
+                $mensaje = "El usuario ya está registrado ";
             } else {
                 $usuarios[$usuario] = password_hash($password, PASSWORD_DEFAULT);
                 file_put_contents($archivoUsuarios, json_encode($usuarios, JSON_PRETTY_PRINT));
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login / Registro - Blog de Halloween 🎃</title>
+    <title>Login / Registro</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body class="login">
