@@ -19,11 +19,16 @@ if (!isset($_SESSION['usuario'])) {
             <ul>
                 <li><a href="home.php">Inicio</a></li>
                 <li><a href="productos.php">Productos</a></li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
+                <li><a href="Historias.php">Historias y Minijuegos</a></li>
+                <li><a href="condecoraciones.php">Condecoraciones</a></li>
             </ul>
         </nav>
         <div class="botones">
+            <nav>
+                <ul>
+                    <li>Usuario: <?= htmlspecialchars($_SESSION['usuario']) ?></li>
+                </ul>
+            </nav>
             <button onclick="window.location.href='logout.php'">Cerrar sesión</button>
         </div>
         <!--lista de navegacion-->
@@ -153,16 +158,15 @@ if (!isset($_SESSION['usuario'])) {
 
         </script>
     </main>
-    <h1>¡Hola <?= htmlspecialchars($_SESSION['usuario']) ?>! 👋 Bienvenido al Blog de Halloween 🎃</h1>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2025 Medac. Proyecto realizado por <strong>Esther, Rafa y Luismi</strong>.</p>
             <nav class="footer-nav">
-                <a href="#">Inicio</a>
-                <a href="#">Productos</a>
-                <a href="#">Contacto</a>
-                <a href="#">Sobre nosotros</a>
+                <a href="home.php">Inicio</a>
+                <a href="productos.php">Productos</a>
+                <a href="Historias.php">Historias y minijuegos</a>
+                <a href="condecoraciones.php">Condecoraciones</a>
             </nav>
         </div>
     </footer>
