@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="img/popuu2.png" alt="Decoración derecha">
         </div>
     </section>
-
+    <button id="modo-toggle" aria-label="Cambiar modo noche/día">Modo claro</button>
     <script>
         function mostrarFormulario(tipo) {
             document.getElementById('formLogin').classList.remove('active');
@@ -120,6 +120,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 this.parentElement.style.display = 'none';
             });
         });
+
+        // Modo claro/oscuro
+                const botonModo = document.getElementById("modo-toggle");
+                botonModo.addEventListener("click", () => {
+                    document.body.classList.toggle("modo-claro");
+                    botonModo.textContent = document.body.classList.contains("modo-claro") ? "Modo oscuro" : "Modo claro";
+                });
     </script>
 </body>
 </html>

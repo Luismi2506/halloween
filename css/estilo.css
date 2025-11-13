@@ -480,6 +480,35 @@ p {
 }
 
 /* ================================
+   Animaciones
+================================ */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translate(0,0); }
+    20% { transform: translate(-10px,0); }
+    40% { transform: translate(10px,0); }
+    60% { transform: translate(-10px,0); }
+    80% { transform: translate(10px,0); }
+    100% { transform: translate(0,0); }
+}
+
+/* ================================
    Enlaces y botones generales
 ================================ */
 .logout {
@@ -537,3 +566,431 @@ p {
     color: #ff6600;
     transform: scale(1.05);
 }
+
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    background: url('../img/cursor.png') no-repeat center center;
+    background-size: contain;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+/* ================================
+   Partículas y shake
+================================ */
+#particulas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 500;
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+/* ================================
+   Minijuegos
+================================ */
+.mini-juegos {
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 2px solid orange;
+}
+
+.mini-juego {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid orange;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.mini-juego h3 {
+    margin-bottom: 10px;
+    color: orange;
+}
+
+.mini-juego button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background: orange;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mini-juego button:hover {
+    background: darkorange;
+}
+
+#fantasma {
+    position: absolute;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#puntaje {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* ================================
+   Modales
+================================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(3px);
+    overflow: auto;
+    animation: fadeIn 0.5s;
+}
+
+.modal-contenido {
+    background: #111;
+    color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ff6600;
+}
+
+.cerrar-modal {
+    color: #ff6600;
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    color: #fff;
+}
+
+/* ================================
+   Modo claro
+================================ */
+body.modo-claro {
+    background: linear-gradient(135deg, #f4f1e9, #f0c27b);
+    color: #222;
+    cursor: auto;
+}
+
+body.modo-claro .historia {
+    background: #fff9e5;
+    border-color: #cc7a00;
+    box-shadow: 0 0 15px #cc7a00;
+    color: #222;
+}
+
+body.modo-claro .historia:hover {
+    box-shadow: 0 0 30px 8px #cc7a00;
+}
+
+body.modo-claro h1, body.modo-claro h2 {
+    color: #cc7a00;
+    text-shadow: none;
+    font-family: 'Arial', sans-serif;
+}
+
+body.modo-claro header {
+    background: #f0c27b;
+    box-shadow: 0 0 15px #cc7a00;
+}
+
+body.modo-claro .botones button {
+    background: #cc7a00;
+    color: #fff;
+}
+
+body.modo-claro .botones button:hover {
+    background: #a66f00;
+    box-shadow: 0 0 10px #a66f00;
+}
+
+body.modo-claro #modo-toggle {
+    background: #cc7a00;
+    box-shadow: 0 0 15px #a66f00;
+}
+
+body.modo-claro #modo-toggle:hover {
+    background: #a66f00;
+}
+
+/* ================================
+   Efectos especiales
+================================ */
+.murcielago {
+    position: fixed;
+    width: 100px;
+    height: 80px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1000;
+}
+
+#modo-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff9900;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff9900;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+}
+
+#modo-toggle:hover {
+    background: #cc7a00;
+}
+
+/* ================================
+   Sección de historias
+================================ */
+
+.historia {
+    background: #111;
+    border: 2px solid #ff9900;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #ff9900;
+    margin: 25px 0;
+    padding: 20px 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+    transition: box-shadow 0.4s ease;
+}
+
+.historia:hover {
+    box-shadow: 0 0 30px 8px #ff9900;
+}
+
+.historia h2 {
+    margin-top: 0;
+}
+
+.resumen {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.contenido {
+    display: none;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.leer-mas {
+    background: transparent;
+    border: none;
+    color: #ff9900;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1rem;
+    padding: 0;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.leer-mas:hover {
+    color: #cc7a00;
+}
+
+/* ================================
+   Productos
+================================ */
+
+
+
+.catalogo {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+padding: 40px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+
+.producto {
+background: rgba(0, 0, 0, 0.8);
+border-radius: 15px;
+box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+overflow: hidden;
+transition: transform 0.3s, box-shadow 0.3s;
+text-align: left;
+padding-bottom: 15px;
+}
+
+
+.producto:hover {
+transform: scale(1.05);
+box-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
+}
+
+
+.producto img {
+width: 100%;
+height: 180px;
+object-fit: cover;
+display: block;
+}
+
+
+.producto .info {
+padding: 15px;
+}
+
+
+.producto h3 {
+color: #ffb347;
+margin-bottom: 10px;
+font-size: 1.1em;
+text-shadow: 1px 1px 2px #000;
+}
+
+
+.producto p {
+font-size: 0.9em;
+color: #f5f5f5;
+margin-bottom: 10px;
+text-shadow: none;
+}
+
+
+.precio {
+color: #00ff88;
+font-weight: bold;
+font-size: 1em;
+margin-bottom: 10px;
+display: block;
+}
+
+
+.botones-producto {
+display: flex;
+gap: 10px;
+justify-content: space-between;
+padding: 0 15px;
+}
+
+
+.botones-producto button {
+background-color: orange;
+border: none;
+color: black;
+font-weight: bold;
+padding: 10px;
+border-radius: 8px;
+}
+
+.producto video {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid orange;
+  border-radius: 5px 5px 0 0;
+  
+}
+
+/* ================================
+   Condecoraciones
+================================ */
+.condecoraciones {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* importante para alinear todo */
+}
+
+.condecoraciones:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
+}
+
+.condecoraciones img,
+.producto video {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.condecoraciones .info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.condecoraciones h3 {
+    color: #ffb347;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px #000;
+    min-height: 2.5em; /* mantiene los títulos al mismo nivel */
+}
+
+.condecoraciones p {
+    font-size: 0.9em;
+    color: #f5f5f5;
+    margin-bottom: 10px;
+    text-shadow: none;
+    min-height: 3em; /* asegura uniformidad en descripciones */
+}
+
+.precio {
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.botones-condecoraciones {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 0 15px 10px 15px;
+}
+
+.botones-condecoraciones button {
+    background-color: orange;
+    border: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+}
+

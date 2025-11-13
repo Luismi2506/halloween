@@ -93,7 +93,7 @@ if (!isset($_SESSION['usuario'])) {
                 </div>
             </section>
         </div>
-
+        <button id="modo-toggle" aria-label="Cambiar modo noche/día">Modo claro</button>
         <script>
             const slider = document.querySelector('.slider');
             const prev = document.querySelector('.prev');
@@ -154,7 +154,12 @@ if (!isset($_SESSION['usuario'])) {
                 }
             });
             
-
+            // Modo claro/oscuro
+                const botonModo = document.getElementById("modo-toggle");
+                botonModo.addEventListener("click", () => {
+                    document.body.classList.toggle("modo-claro");
+                    botonModo.textContent = document.body.classList.contains("modo-claro") ? "Modo oscuro" : "Modo claro";
+                });
 
         </script>
     </main>
