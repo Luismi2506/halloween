@@ -59,13 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </header>
 
-    <h1>REGISTRATE MAMONAZO</h1>
+    <h1>REGISTRATE</h1>
 
     <!-- Nueva sección de login con imágenes a los lados -->
     <section class="login-section">
         <div class="imagen-lateral izquierda">
             <span class="cerrar-imagen">&times;</span>
-            <img src="img/popup.png" alt="Decoración izquierda">
+            <img src="img/pedrito.jpg" alt="Decoración izquierda">
         </div>
 
         <div class="formularios">

@@ -53,45 +53,52 @@ if (!isset($_SESSION['usuario'])) {
 </section>
 
         <!--Seccion que redirige a la pagina de productos-->
-        <div class="seccion-productos">
-            <section class="productos-slider">
-                <h2>Productos Destacados</h2>
-                <div class="slider-container">
-                    <div class="slider">
-                    <div class="card">
-                        <img src="img/producto1.jpg" alt="Disfraz de Vampiro">
-                        <h3>Disfraz de Vampiro</h3>
-                        <p>Precio: $49.99</p>
-                        <button>Ver productos</button>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/producto2.jpg" alt="Calabaza Decorativa">
-                        <h3>Calabaza Decorativa</h3>
-                        <p>Precio: $19.99</p>
-                        <button>Ver productos</button>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/producto3.jpg" alt="Set de Maquillaje de Terror">
-                        <h3>Set de Maquillaje de Terror</h3>
-                        <p>Precio: $29.99</p>
-                        <button>Ver productos</button>
-                    </div>
-
-                    <div class="card">
-                        <img src="img/producto4.jpg" alt="Sombrero de Bruja">
-                        <h3>Sombrero de Bruja</h3>
-                        <p>Precio: $24.99</p>
-                        <button>Ver productos</button>
-                    </div>
-                    </div>
-
-                    <!-- Botones de control -->
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
+        <div class="catalogo">
+            <div class="producto">
+                <video autoplay muted loop playsinline>
+                    <source src="img/videovampiro.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="info">
+                    <h3>Disfraz de vampiro</h3>
+                    <p>Disfraz de vampiro para tu gallo favorito.</p>
+                    <span class="precio">€39.99</span>
                 </div>
-            </section>
+                <div class="botones-producto">
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <video autoplay muted loop playsinline>
+                    <source src="img/puro.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="info">
+                    <h3>Puro de chocolate</h3>
+                    <p>Puro de chocolate para alimentar a tu gallo de las formas más graciosas.</p>
+                    <span class="precio">€39.99</span>
+                </div>
+                <div class="botones-producto">
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <video autoplay muted loop playsinline>
+                    <source src="img/samurai.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="info">
+                    <h3>Disfraz de Samurai</h3>
+                    <p>Disfraza a tu gallo como un verdadero samurai.</p>
+                    <span class="precio">€39.99</span>
+                </div>
+                <div class="botones-producto">
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section>
         </div>
         <button id="modo-toggle" aria-label="Cambiar modo noche/día">Modo claro</button>
         <script>

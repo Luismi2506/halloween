@@ -11,20 +11,10 @@
  dinero ganado en bet365: 520 euros
  horas de sueño perdidas: 299
 
-
  si necesitas cambiar esto, primero reza, luego haz una copia de seguridad, y por ultimo suerte.
-
-
-
-
-
-
-
 -->
 
 <?php
-
-
 session_start();
 if (!isset($_SESSION['usuario'])) {
     header('Location: index.php');
@@ -58,69 +48,72 @@ if (!isset($_SESSION['usuario'])) {
             </nav>
             <button onclick="window.location.href='logout.php'">Cerrar sesión</button>
         </div>
-        <!--lista de navegacion-->
-        
     </header>
 
-      
-    
-<h1>Condecoraciones</h1>
+    <h1>Condecoraciones</h1>
 
+    <section class="catalogo">
 
-<section class="catalogo">
+        <div class="condecoraciones">
+            <img src="img/pelopo.jpg" alt="Banner de condecoraciones">
+            <div class="info">
+                <h3>Luismi (Pelopo)</h3>
+                <p>Se ha pasado todo el trabajo quejandose de que manu no empezaba el trabajo. No ha hecho nada mas que aportar malas ideas y encima no para el proyecto.</p>
+                <span class="precio">Horas asistidas a entorno servidor: 2 (se las pasó durmiendo)</span>
+            </div>
+        </div>
 
+        <div class="condecoraciones">
+            <img src="img/truka.jpg" alt="Banner de condecoraciones">
+            <div class="info">
+                <h3>Rafael (Truka)</h3>
+                <p>Se pasó todo el trabajo apostandole a la tragaperras y a la ruleta no ha hecho nada mas. Adémas mientras se le reprochaba solo se puso a buscar productos contra la calvicie.</p>
+                <span class="precio">Horas jugadas: 23H (todas en clase, ninguna productiva)</span>
+            </div>
+        </div>
 
-<div class="condecoraciones">
-  <img src="img/pelopo.jpg" alt="Banner de condecoraciones">
-  <div class="info">
-    <h3>Luismi (Pelopo)</h3>
-    <p>Se ha pasado todo el trabajo quejandose de que manu no empezaba el trabajo. No ha hecho nada mas que aportar malas ideas y encima no para el proyecto.</p>
-    <span class="precio">Horas asistidas a entorno servidor: 2 (se las pasó durmiendo)</span>
-  </div>
+        <div class="condecoraciones">
+            <img src="img/raquel.jpg" alt="Banner de condecoraciones">
+            <div class="info">
+                <h3>Esther (Raquel)</h3>
+                <p>La unica gota de cordura dentro del proyecto, se ha pasado todo el proyecto rechazando ideas cada cual mas explicita. no ha hecho nada mas que jugar al cookie clicker</p>
+                <span class="precio">Horas jugadas al cookie clicker : 30H </span>
+            </div>
+        </div>
 
-</div>
+        <div class="condecoraciones">
+            <video autoplay muted loop playsinline>
+                <source src="img/chatito.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+            <div class="info">
+                <h3>Chat gpt</h3>
+                <p>Fue el unico que hizo algo en el proyecto, estuvo carrileando desde el minuto 1. Te queremos carlitos (chatgpt)</p>
+                <span class="precio">porcentaje del trabajo realizado : 99%</span>
+            </div>
+        </div>
 
+    </section>
 
-<div class="condecoraciones">
-  <img src="img/truka.jpg" alt="Banner de condecoraciones">
-
-  <div class="info">
-    <h3>Rafael (Truka)</h3>
-    <p>Se pasó todo el trabajo apostandole a la tragaperras y a la ruleta no ha hecho nada mas. Adémas mientras se le reprochaba solo se puso a buscar productos contra la calvicie.</p>
-    <span class="precio">Horas jugadas: 23H (todas en clase, ninguna productiva)</span>
-  </div>
-
-</div>
-
-
-<div class="condecoraciones">
-  <img src="img/raquel.jpg" alt="Banner de condecoraciones">
-
-  <div class="info">
-    <h3>Esther (Raquel)</h3>
-    <p>La unica gota de cordura dentro del proyecto, se ha pasado todo el proyecto rechazando ideas cada cual mas explicita. no ha hecho nada mas que jugar al cookie clicker  </p>
-        <span class="precio">Horas jugadas al cookie clicker : 30H </span>
-  </div>
-</div>
-
-<div class="condecoraciones">
-  <video autoplay muted loop playsinline>
-    <source src="" type="video/mp4">
-    Tu navegador no soporta la reproducción de video.   
-  </video>
-
-  <div class="info">
-    <h3>Chat gpt</h3>
-    <p> Fue el unico que hizo algo en el proyecto, estuvo carrileando desde el minuto 1. Te queremos carlitos (chatgpt)</p>
-    <span class="precio">porcentaje del trabajo realizado : 99% </span>
-  </div>
-</div>
-
-
-
-
-</section>
-
-
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Medac. Proyecto realizado por <strong>Esther, Rafa y Luismi</strong>.</p>
+            <nav class="footer-nav">
+                <a href="home.php">Inicio</a>
+                <a href="productos.php">Productos</a>
+                <a href="Historias.php">Historias y minijuegos</a>
+                <a href="condecoraciones.php">Condecoraciones</a>
+            </nav>
+        </div>
+    </footer>
+    <button id="modo-toggle" aria-label="Cambiar modo noche/día">Modo claro</button>
+    <script>
+        // Modo claro/oscuro
+                const botonModo = document.getElementById("modo-toggle");
+                botonModo.addEventListener("click", () => {
+                    document.body.classList.toggle("modo-claro");
+                    botonModo.textContent = document.body.classList.contains("modo-claro") ? "Modo oscuro" : "Modo claro";
+                });
+    </script>
 </body>
 </html>

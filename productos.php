@@ -187,5 +187,15 @@ if (!isset($_SESSION['usuario'])) {
             </nav>
         </div>
     </footer>
+
+    <button id="modo-toggle" aria-label="Cambiar modo noche/día">Modo claro</button>
+    <script>
+        // Modo claro/oscuro
+                const botonModo = document.getElementById("modo-toggle");
+                botonModo.addEventListener("click", () => {
+                    document.body.classList.toggle("modo-claro");
+                    botonModo.textContent = document.body.classList.contains("modo-claro") ? "Modo oscuro" : "Modo claro";
+                });
+    </script>
 </body>
 </html>
